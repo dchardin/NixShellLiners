@@ -17,6 +17,17 @@
 
 
 
+#-------------------------------------------------------------------------------
+# Outputting characters from a text file one at a time
+#-------------------------------------------------------------------------------
+
+
+#!/bin/bash
+expect -c 'set send_human {.01 .02 5 .005 .005}; 
+spawn -noecho cat /home/donnie/iamtext; 
+interact -indices -o -re ".+" { send_user -h -- "$interact_out(0,string)" }'
+
+
 
 
 #-------------------------------------------------------------------------------
