@@ -39,9 +39,14 @@ sed -i -e's/ldap01.util.phx2.redhat.com/ldap.corp.redhat.com/' /usr/bin/linfo
 
 
 #-------------------------------------------------------------------------------
-## forgot what I used these for
+## Append comma after every word in a line
 #-------------------------------------------------------------------------------
 
+sed 's/\>/,/g' somefilename
+
+#-------------------------------------------------------------------------------
+## forgot what I used these for
+#-------------------------------------------------------------------------------
 
 
 for i in `ps aux | awk '{ print $2 }'`; do `grep -q 'nss\|nspr'\ 
