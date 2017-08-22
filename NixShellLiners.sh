@@ -45,6 +45,13 @@ sed -i -e's/ldap01.util.phx2.redhat.com/ldap.corp.redhat.com/' /usr/bin/linfo
 sed 's/\>/,/g' somefilename
 
 #-------------------------------------------------------------------------------
+## Append apostrophe at beginning of string in every line
+## also append apostrophe and comma at end of string
+#-------------------------------------------------------------------------------
+
+sed "s/^/'/;s/$/',/" somefilename
+
+#-------------------------------------------------------------------------------
 ## forgot what I used these for
 #-------------------------------------------------------------------------------
 
