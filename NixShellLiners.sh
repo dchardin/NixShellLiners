@@ -197,6 +197,24 @@ find . | xargs grep <term>
 
 find / -printf '%s %p\n'| sort -nr | head -20
 
+
+## Find largest 50 directories
+
+du -h * | sort -rh | head -5 
+
+
+## Find largest 50 directories (On a system with older version of Sort that 
+## does not support -h
+
+du -h * | perl -e 'sub h{%h=(K=>10,M=>20,G=>30);($n,$u)=shift=~/([0-9.]+)(\D)/; 
+return $n*2**$h{$u}}print sort{h($b)<=>h($a)}<>;' | head -50
+
+## Find largest 20 files
+
+find / -printf '%s %p\n'| sort -nr | head -20
+
+## See https://www.tecmint.com/find-top-large-directories-and-files-sizes-in-linux/
+
 #===============================================================================
 #-------------------------------------------------------------------------------
 # Archives
