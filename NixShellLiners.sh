@@ -82,7 +82,11 @@ sed "s/^/\"/;s/$/\" \\\ /" other.csv
 
 sed 's/[\t ]/,/g' thefilesname
 
+#-------------------------------------------------------------------------------
+## turn a column of text numbers into a comma separated list on one line.
+#-------------------------------------------------------------------------------
 
+perl -pe'chomp, s/$/,/ unless eof' RepIdColumn1 > repIdColumn2.csv
 
 #-------------------------------------------------------------------------------
 ## forgot what I used these for
