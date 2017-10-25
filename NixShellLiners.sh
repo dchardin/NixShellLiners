@@ -52,6 +52,15 @@ sed 's/\>/,/g' somefilename
 sed "s/^/'/;s/$/',/" somefilename
 
 #-------------------------------------------------------------------------------
+## Append quote at beginning of string in every line
+## also append quote and space+backslash at end of string.
+# (great fro prepping a column for entry into a bash array!)
+#-------------------------------------------------------------------------------
+
+
+sed "s/^/\"/;s/$/\" \\\ /" other.csv
+
+#-------------------------------------------------------------------------------
 ## Replace whitespace between columns with a comma
 #
 ## Example:
