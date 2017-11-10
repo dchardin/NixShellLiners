@@ -252,6 +252,10 @@ find / -printf '%s %p\n'| sort -nr | head -20
 
 ## See https://www.tecmint.com/find-top-large-directories-and-files-sizes-in-linux/
 
+## locate something and sort the results oldest to newest:
+
+locate something -0 | xargs -0 stat -c'%Y %n' | sort -n
+
 #===============================================================================
 #-------------------------------------------------------------------------------
 # Archives
