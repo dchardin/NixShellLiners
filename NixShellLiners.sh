@@ -194,7 +194,13 @@ git branch -a
 #===============================================================================
   
 
+#-------------------------------------------------------------------------------
+# use youtube-dl to download audio from youtube.
+#-------------------------------------------------------------------------------
 
+youtube-dl -f bestaudio  "https://www.youtube.com/playlist?list=PLYRruMbyFRcBVdVN8v4FNkIKkXvL-bZn_" --exec "ffmpeg -i {}  -codec:a libmp3lame -qscale:a 0 {}.mp3 && rm {} "
+
+youtube-dl -f bestaudio  "https://youtu.be/RlPI7MbTWKA" --exec "ffmpeg -i {}  -codec:a libmp3lame -qscale:a 0 {}.mp3 && rm {} "
 
 #-------------------------------------------------------------------------------
 # wget from a password protected website and download all the .jpg files
@@ -203,7 +209,6 @@ git branch -a
 
 wget --user donnie --password passwdgoeshere --no-parent -r -l1 -A.jpg \
 http://75.whateverurl/whatever/folderwith.jpgs
-
 
                                                                                 
 #-------------------------------------------------------------------------------
