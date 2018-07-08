@@ -572,9 +572,6 @@ recursively for reports in a directory called 450040
 the unpacked initrd then go from there
 
 
-
-
-
 ## here is a useful bulk mp3 renaming script that helps when order
 ## matters. Here is what it does.
 
@@ -603,6 +600,9 @@ for dir in ~/mnt/6TB/DATA/MUSICFILES/MUSIC-FAVS/*; do (find -type f -not -regex 
 
 -----------------
 
+#handy mp3 splitting with mp3splt
+
+mp3splt -o @N3_@f -f -t 10.0 -a -d split somemp3file.mp3
 
 
 
